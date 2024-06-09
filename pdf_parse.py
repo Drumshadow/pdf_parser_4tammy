@@ -16,8 +16,6 @@ def pdf_to_xml(pdf_path, xml_out):
 
 def resident_cc_total(xml_file):
     resident_names = []
-    code_total = []
-    case_total = []
     
     try:
         # Parse the XML file
