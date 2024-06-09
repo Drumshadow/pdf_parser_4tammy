@@ -6,15 +6,6 @@ import tkinter as tk
 from tkinter import filedialog, messagebox, simpledialog
 from datetime import date
 
-
-#read the PDF
-# pdf = pdfquery.PDFQuery('./PDFs/PGY 4 Case Detail from June 2023 - May 2024.pdf')
-# pdf.load()
-
-
-# #convert the pdf to XML
-# pdf.tree.write('info.xml', pretty_print = True)
-# pdf
 def pdf_to_xml(pdf_path, xml_out):
     #read the PDF
     pdf = pdfquery.PDFQuery(pdf_path)
