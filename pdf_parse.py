@@ -14,33 +14,6 @@ def pdf_to_xml(pdf_path, xml_out):
     pdf.tree.write(xml_out, pretty_print = True)
     pdf
 
-def resident_cc_total(xml_file):
-    resident_names = []
-    
-    try:
-        # Parse the XML file
-        tree = ET.parse(xml_file)
-        root = tree.getroot()
-
-        # Function to recursively search for the string in all elements
-        def search_element(element):
-            for subelement in element:
-                if subelement.text and "Resident:" in subelement.text and not subelement.text in resident_names:
-                    # Capture the text starting from "Case created:" to the end
-                    start_index = subelement.text.find("Case Date:")
-                    resident_names.append(subelement.text[start_index+11:].strip())
-                search_element(subelement)
-
-        # Start searching from the root element
-        search_element(root)
-    
-    except ET.ParseError as e:
-        print(f"Error parsing XML file: {e}")
-    except Exception as e:
-        print(f"An error occurred: {e}")
-
-
-
 def find_case_created(xml_file):
     case_date = []
     date_entered = []
