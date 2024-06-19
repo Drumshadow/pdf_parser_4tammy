@@ -32,5 +32,10 @@ func main() {
     split_arr := strings.Split(buf.String(), "\n")
 	fmt.Println(split_arr)
 
+	for i := 0; i < len(split_arr); i++{
+		if strings.Contains(split_arr[i], "Code Total"){
+			fmt.Println(split_arr[i])
+		}
+	}
 
 }
