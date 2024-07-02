@@ -33,7 +33,7 @@ func main() {
 	fmt.Println(split_arr)
 
 	for i := 0; i < len(split_arr); i++{
-		if strings.Contains(split_arr[i], "Code Total"){
+		if strings.Contains(split_arr[i], "Code Total"){ // look for Code Total and then print the values that follow it
 			fmt.Println(split_arr[i])
 		}
 	}
